@@ -44,7 +44,9 @@ const TodoList = ({
         <li key={todo.id} className={styles.list}>
           <div>
             <input
-              style={{ display: editing === todo.id ? "inline" : "none" }}
+              style={{
+                display: editing === todo.id && !todo.done ? "inline" : "none",
+              }}
               className={styles.editInput}
               ref={(node) => {
                 const map = getMap();
@@ -67,7 +69,12 @@ const TodoList = ({
             </span>
           </div>
           <div className={styles.editButtons}>
-            <button onClick={() => handleDone(todo.id)}>
+            <button
+              onClick={() => {
+                setEditing("");
+                handleDone(todo.id);
+              }}
+            >
               <FontAwesomeIcon
                 icon={todo.done ? faSquareCheck : faSquare}
                 className={`fa-lg ${todo.done ? `${styles.green}` : ""} ${
