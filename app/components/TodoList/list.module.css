@@ -1,0 +1,200 @@
+.list {
+  display: flex;
+  background-color: var(--acqua);
+  font-size: 1.1rem;
+  height: 60px;
+  line-height: 60px;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.list:nth-child(2n) {
+  background-color: var(--cyan_light);
+}
+.list:hover .editButtons {
+  opacity: 1;
+}
+.editInput {
+  background-color: inherit;
+  outline: none;
+}
+
+.editButtons {
+  opacity: 0;
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  gap: 20px;
+  color: var(--grey);
+  transition: 400ms ease-in;
+}
+
+.editActive {
+  color: var(--orange);
+}
+.heartBeatAnimate:hover {
+  transition: 400ms ease-in;
+  animation: heartbeat 0.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: 2;
+  animation-timing-function: ease-in-out;
+}
+
+.wiggleAnimate:hover {
+  animation: wiggle 0.5s;
+  animation-iteration-count: 2;
+  animation-timing-function: ease;
+}
+
+.rotateAnimate:hover {
+  color: var(--salmon);
+  animation: rotate 0.6s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+.hideAnimate {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.done {
+  color: var(--grey_cyan);
+  text-decoration: line-through;
+}
+
+.green {
+  color: var(--green);
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.1);
+  }
+
+  20% {
+    transform: scale(1.2);
+  }
+
+  30% {
+    transform: scale(1.3);
+  }
+
+  40% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  80% {
+    transform: scale(0.8);
+  }
+
+  90% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(-6deg);
+  }
+
+  20% {
+    transform: rotate(-12deg);
+  }
+
+  30% {
+    transform: rotate(-18deg);
+  }
+
+  40% {
+    transform: rotate(-12deg);
+  }
+
+  50% {
+    transform: rotate(-6deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  70% {
+    transform: rotate(6deg);
+  }
+
+  80% {
+    transform: rotate(12deg);
+  }
+
+  90% {
+    transform: rotate(6deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  12.5% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  37.5% {
+    transform: rotate(135deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  62.5% {
+    transform: rotate(225deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  87.5% {
+    transform: rotate(315deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

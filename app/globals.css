@@ -2,32 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --acqua: rgb(230, 244, 241);
+  --cyan_dark: rgb(34, 193, 195);
+  --cyan_light: rgb(217, 237, 237);
+  --green: rgb(0, 128, 0);
+  --grey: rgb(84, 76, 75);
+  --grey_cyan: rgb(182, 190, 190);
+  --grey_light: rgb(128, 128, 128);
+  --lime_light: rgb(236, 247, 209);
+  --orange: rgb(255, 165, 0);
+  --salmon: rgb(247, 121, 125);
+  --salmon_light: rgb(242, 154, 157);
+  --white: rgb(255, 255, 255);
+  --yellow: rgb(251, 215, 134);
+  --yellow_light: rgb(247, 233, 192);
+}
+
+html,
+body {
+  min-height: 100vh;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  align-items: center;
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    var(--cyan_dark) 5%,
+    var(--lime_light) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  font-family: "Comfortaa", cursive;
+  justify-content: space-evenly;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+main {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container {
+  max-width: 460px;
+  border-radius: 8px;
+  box-shadow: 16px 16px 23px var(--grey_light);
+  margin: 80px 0 40px;
+  overflow: hidden;
+}
+
+h1 {
+  background-color: var(--salmon);
+  color: var(--white);
+  cursor: default;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 2.2rem;
+  font-weight: 400;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 85vw;
+    margin: 10vh 0 0;
+    color: blue !important;
+  }
+  h1 {
+    font-size: 1.4rem;
+    padding: 8vw;
   }
 }
